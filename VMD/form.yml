@@ -1,0 +1,32 @@
+---
+cluster: "zuphux"
+form:
+  - bc_account
+  - bc_num_hours
+  - bc_vnc_resolution
+  - bc_queue
+  - custom_memory
+  - bc_num_slots
+attributes:
+  bc_queue: "ondemand_ga"
+  bc_vnc_resolution:
+    required: true
+  bc_account: "null"
+  custom_memory:
+    widget: "number_field"
+    value: "8"
+    label: "Memory"
+    help:  |
+      "Please set explicit memory in GB (default = 8)"
+    required: true
+    min: 8
+    max: 4000
+  bc_num_slots:
+    widget: "number_field"
+    value: "1"
+    label: "Number of CPUs"
+    help:  |
+      "Please set number of CPUs (default = 1)"
+    required: true
+    min: 1
+    max: 128

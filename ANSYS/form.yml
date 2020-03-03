@@ -1,0 +1,54 @@
+---
+cluster: "zuphux"
+form:
+  - version
+  - bc_account
+  - bc_num_hours
+  - bc_num_slots
+  - bc_vnc_resolution
+  - bc_email_on_started
+  - bc_queue
+  - custom_memory
+  - executable_command
+attributes:
+  bc_account: "null"
+  bc_email_on_started: "null"
+  bc_queue: "ondemand_gui"
+  bc_num_slots:
+    widget: "number_field"
+    value: "1"
+    label: "Number of CPUs"
+    help:  |
+      "Please set number of CPUs (default = 2)"
+    required: true
+    min: 2
+    max: 128
+  bc_vnc_resolution:
+    required: true
+  version:
+    widget: select
+    label: "ANSYS Workbench version"
+    help: "This defines the version of ANSYS you want to load."
+    options:
+      - [ "2019R3", "ansys-2019-R3" ]
+      - [ "19.2",   "ansys-19.2"    ]
+      - [ "18.2",   "ansys-18.2"    ]
+      - [ "18.0",   "ansys-18.0"    ]
+      - [ "17.2",   "ansys-17.2"    ]
+  executable_command:
+    widget: select
+    label: "Executable"
+    help: "Choose which ANSYS command you would like to run"
+    options:
+      - ["FLUENT", "fluent"]
+      - ["CFX", "cfx5"]
+      - ["WORKBENCH", "runwb2"]
+  custom_memory:
+    widget: "number_field"
+    value: "8"
+    label: "Memory"
+    help:  |
+      "Please set explicit memory in GB (default = 8)"
+    required: true
+    min: 8
+    max: 4000
