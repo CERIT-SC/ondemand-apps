@@ -13,7 +13,7 @@ form:
 attributes:
   bc_account: "null"
   bc_email_on_started: "null"
-  bc_queue: "ondemand_gui"
+  bc_queue: "ondemand_ga"
   bc_num_slots:
     widget: "number_field"
     value: "1"

@@ -25,7 +25,7 @@ attributes:
   bc_vnc_resolution:
     required: true
   bc_account: "null"
-  bc_queue: "ondemand_gui"
+  bc_queue: "ondemand_ga"
   bc_email_on_started: "null"
   node_type:
     widget: select
