@@ -5,8 +5,6 @@
 # Clean the environment
 module purge
 
-module add xfce-4.14.0
-
 # Set working directory to home directory
 cd "${HOME}"
 
@@ -21,10 +19,10 @@ cd "${HOME}"
   export XDG_CACHE_HOME="$(mktemp -d)"
   module restore
   set -x
-  /cvmfs/software.metacentrum.cz/software/xfce/4.14.0/bin/xfwm4 --compositor=off --daemon --sm-client-disable
-  /usr/bin/xsetroot -solid "#D3D3D3"
-  /cvmfs/software.metacentrum.cz/software/xfce/4.14.0/bin/xfsettingsd --sm-client-disable
-  /cvmfs/software.metacentrum.cz/software/xfce/4.14.0/bin/xfce4-panel --sm-client-disable
+  xfwm4 --compositor=off --daemon --sm-client-disable
+  xsetroot -solid "#D3D3D3"
+  xfsettingsd --sm-client-disable
+  xfce4-panel --sm-client-disable
 ) &
 
 #
