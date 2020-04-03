@@ -17,9 +17,9 @@ attributes:
     value: "1"
     label: "Number of CPUs"
     help:  |
-      "Please set number of CPUs (default = 1)"
+      "Please set number of CPUs (default = 2)"
     required: true
-    min: 1
+    min: 2
     max: 128
   bc_vnc_resolution:
     required: true
