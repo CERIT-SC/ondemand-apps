@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-#<%- gpu = context.node_type.include?("vis") -%>
-
 CONN_F=$PWD/connection.yml
 
 while ! [ -f $CONN_F ]; do sleep 1; done
@@ -43,13 +41,6 @@ module add  <%= context.version %>
 export PATH=/cvmfs/software.metacentrum.cz/software/virtualgl/2.6.3/bin/:$PATH
 
 # Launch MATLAB
-<%- if gpu -%>
-module load intel/16.0.3 virtualgl
-module list
-set -x
-/usr/bin/vglrun matlab -desktop -nosoftwareopengl
-<%- else -%>
 module list
 set -x
 matlab -desktop
-<%- end -%>

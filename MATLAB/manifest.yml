@@ -4,7 +4,4 @@ category: Interactive Apps
 subcategory: GUIs
 role: batch_connect
 description: |
-  This app will launch a [MATLAB] GUI on the .... nodes. You will be able
-  to interact with the MATLAB GUI through a VNC session.
-
-  [MATLAB]: https://www.mathworks.com/products/matlab.html
+  This app will launch MATLAB GUI on zefron6 or zefron8.

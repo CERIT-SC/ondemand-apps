@@ -4,8 +4,5 @@ category: Interactive Apps
 subcategory: GUIs
 role: batch_connect
 description: |
-  This app will launch an [ANSYS] within a [Turbo VNC] server on the
-  Zefron 8.
+  This app will launch a selected ANSYS executable (FLUENT/CFX/WORKBENCH) on zefron6 or zefron8.
 
-  [ANSYS Workbench]: https://www.ansys.com/
-  [Turbo VNC]: https://www.turbovnc.org/
