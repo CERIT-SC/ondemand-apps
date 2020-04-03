@@ -6,4 +6,4 @@ script:
   email_on_started: false
   native:
     - "-l"
-    - "select=1:ncpus=<%= bc_num_slots.to_i %>:mem=<%= custom_memory.to_i %>G:scratch_local=10G"
+    - "select=1:ngpus=1:ncpus=<%= bc_num_slots.to_i %>:mem=<%= custom_memory.to_i %>G:scratch_local=10G"
