@@ -50,5 +50,5 @@ attributes:
     help:  |
       "Please set explicit memory in GB (default = 8)"
     required: true
-    min: 8
+    min: 16
     max: 4000
