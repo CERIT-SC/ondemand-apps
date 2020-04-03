@@ -48,7 +48,7 @@ attributes:
     value: "8"
     label: "Memory"
     help:  |
-      "Please set explicit memory in GB (default = 8)"
+      "Please set explicit memory in GB (default = 16)"
     required: true
     min: 16
     max: 4000
