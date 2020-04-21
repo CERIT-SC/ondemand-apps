@@ -12,6 +12,15 @@ attributes:
   bc_vnc_resolution:
     required: true
   bc_account: "null"
+  bc_num_slots:
+    widget: "number_field"
+    value: "1"
+    label: "Number of CPUs"
+    help:  |
+      "Please set required number of CPUs (default = 2)"
+    required: true
+    min: 2
+    max: 128
   custom_memory:
     widget: "number_field"
     value: "8"
@@ -21,12 +30,3 @@ attributes:
     required: true
     min: 16
     max: 4000
-  bc_num_slots:
-    widget: "number_field"
-    value: "1"
-    label: "Number of CPUs"
-    help:  |
-      "Please set number of CPUs (default = 1)"
-    required: true
-    min: 1
-    max: 128

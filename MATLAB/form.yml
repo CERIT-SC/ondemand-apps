@@ -17,7 +17,7 @@ attributes:
     value: "1"
     label: "Number of CPUs"
     help:  |
-      "Please set number of CPUs (default = 2)"
+      "Please set required number of CPUs (default = 2)"
     required: true
     min: 2
     max: 128
@@ -38,7 +38,7 @@ attributes:
   version:
     widget: select
     label: "MATLAB version"
-    help: "This defines the version of MATLAB you want to load."
+    help: "Please select version of MATLAB you want to load."
     options:
       - [ "9.5", "matlab-9.5" ]
       - [ "9.4", "matlab-9.4" ]

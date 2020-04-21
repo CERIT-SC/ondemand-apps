@@ -19,7 +19,7 @@ attributes:
     value: "1"
     label: "Number of CPUs"
     help:  |
-      "Please set number of CPUs (default = 2)"
+      "Please set required number of CPUs (default = 2)"
     required: true
     min: 2
     max: 128
@@ -28,7 +28,7 @@ attributes:
   version:
     widget: select
     label: "ANSYS Workbench version"
-    help: "This defines the version of ANSYS you want to load."
+    help: "Please select version of ANSYS you want to load."
     options:
       - [ "2019R3", "ansys-2019-R3" ]
       - [ "19.2",   "ansys-19.2"    ]

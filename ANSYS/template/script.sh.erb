@@ -2,13 +2,6 @@
 
 CONN_F=$PWD/connection.yml
 
-while ! [ -f $CONN_F ]; do sleep 1; done
-
-PORT=$(boltdb-dump "/host/${SCRATCHDIR}/libpod/bolt_state.db" | grep -o "hostPort..[0-9]*,.containerPort..2000" | sed 's/hostPort..\([0-9]*\),.containerPort..\([0-9]*\)/\1/')
-PWD=`pwd`
-LINE="$(grep -n "websocket:" $CONN_F | head -n 1 | cut -d: -f1)"
-sed -i "${LINE}s/.*/websocket: $PORT/" $CONN_F
-
 # Clean the environment
 module purge
 
