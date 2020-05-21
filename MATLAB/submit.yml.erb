@@ -29,4 +29,4 @@ script:
   native:
     - "-l"
     - "select=1:ngpus=1:ncpus=<%= bc_num_slots.to_i %>:mem=<%= custom_memory.to_i %>G:scratch_local=10G"
-
+    - "-v IMAGE=cerit/debian10-xfce-gl"
