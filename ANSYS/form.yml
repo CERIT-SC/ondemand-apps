@@ -43,6 +43,7 @@ attributes:
       - ["FLUENT", "fluent"]
       - ["CFX", "cfx5"]
       - ["WORKBENCH", "runwb2"]
+      - ["APDL", "mapdl -g"]
   custom_memory:
     widget: "number_field"
     value: "8"
