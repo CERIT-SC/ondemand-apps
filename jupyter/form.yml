@@ -29,7 +29,7 @@ attributes:
   modules: ""
   bc_email_on_started: "null"
   bc_account: "null"
-  bc_queue: "phi"
+  bc_queue: "ondemand_gui"
   bc_num_hours:
     widget: "number_field"
     value: "1"
