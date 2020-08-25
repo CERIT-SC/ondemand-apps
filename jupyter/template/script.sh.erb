@@ -13,6 +13,10 @@ cd "${HOME}"
 # Purge the module environment to avoid conflicts
 module purge
 
+if [ -f ${HOME}/.ondemandrc-jupyter ]; then
+   source ${HOME}/.ondemandrc-jupyter
+fi
+
 # Load the require modules
 module add anaconda3-2019.10
 source /cvmfs/software.metacentrum.cz/software/anaconda/python37/2019-10/etc/profile.d/conda.sh
