@@ -57,6 +57,13 @@ attributes:
     required: true
     min: 8
     max: 4000
+  custom_command:
+    widget: "text_field"
+    value: ""
+    label: "Other commands to run before loading module jupyter"
+    help:  |
+      "This field is optional. You can specify custom bash command(s) here or source a file (source /path/to/file)."
+    required: false
 
 
   # Any extra command line arguments to feed to the `jupyter notebook ...`
@@ -80,5 +87,5 @@ form:
   - bc_num_hours
   - bc_num_slots
   - bc_email_on_started
-  - custom_memory
-
+  - custom_memory  
+  - custom_command
