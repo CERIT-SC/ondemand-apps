@@ -13,8 +13,22 @@ cd "${HOME}"
 # Purge the module environment to avoid conflicts
 module purge
 
+# this is temporary fix, custom commands should be specified via <%= context.custom_command %>
 if [ -f ${HOME}/.ondemandrc-jupyter ]; then
    source ${HOME}/.ondemandrc-jupyter
+fi
+
+# If user specified custom command(s), run them now
+if [ -z <%= context.custom_command %> ]; then
+  echo "Custom command not specified, proceeding..."
+else
+  echo "Custom_command specified: <%= context.custom_command %>"
+  <%= context.custom_command %>
+  if [ $? -eq 0 ]; then # checking for the return code of last command only, however
+    echo "Custom command OK"
+  else
+    echo "Warning! Command  <%= context.custom_command %> failed." # killing the whole stuff does not seem reasonable...
+  fi
 fi
 
 # Load the require modules
