@@ -18,6 +18,12 @@ if [ -f ${HOME}/.ondemandrc-jupyter ]; then
    source ${HOME}/.ondemandrc-jupyter
 fi
 
+# Load the require modules
+module add anaconda3-2019.10
+source /cvmfs/software.metacentrum.cz/software/anaconda/python37/2019-10/etc/profile.d/conda.sh
+
+module list
+
 # If user specified custom command(s), run them now
 if [ -z "<%= context.custom_command %>" ]; then
   echo "Custom command not specified, proceeding..."
@@ -30,14 +36,6 @@ else
     echo "Warning! Command  <%= context.custom_command %> failed." # killing the whole stuff does not seem reasonable...
   fi
 fi
-
-# Load the require modules
-module add anaconda3-2019.10
-source /cvmfs/software.metacentrum.cz/software/anaconda/python37/2019-10/etc/profile.d/conda.sh
-
-# List loaded modules
-module list
-
 
 mkdir -p ${HOME}/R/x86_64-redhat-linux-gnu-library/
 export R_LIBS=${HOME}/R/x86_64-redhat-linux-gnu-library/
