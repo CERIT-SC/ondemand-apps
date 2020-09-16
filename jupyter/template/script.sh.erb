@@ -19,7 +19,7 @@ if [ -f ${HOME}/.ondemandrc-jupyter ]; then
 fi
 
 # If user specified custom command(s), run them now
-if [ -z <%= context.custom_command %> ]; then
+if [ -z "<%= context.custom_command %>" ]; then
   echo "Custom command not specified, proceeding..."
 else
   echo "Custom_command specified: <%= context.custom_command %>"
