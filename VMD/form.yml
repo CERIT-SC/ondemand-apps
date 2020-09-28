@@ -14,7 +14,7 @@ attributes:
   bc_account: "null"
   bc_num_slots:
     widget: "number_field"
-    value: "1"
+    value: "2"
     label: "Number of CPUs"
     help:  |
       "Please set required number of CPUs (default = 2)"
@@ -23,7 +23,7 @@ attributes:
     max: 128
   custom_memory:
     widget: "number_field"
-    value: "8"
+    value: "16"
     label: "Memory"
     help:  |
       "Please set explicit memory in GB (default = 16)"
