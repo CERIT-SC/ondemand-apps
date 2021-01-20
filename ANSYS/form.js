@@ -99,6 +99,33 @@ function set_user_license_provider_change_handler() {
 }
 
 /**
+ * Hide executables which aren't supported in a specific versions. 
+ */
+function hide_unsupported_executables() {
+  let select_version_value = $("#batch_connect_session_context_version").val();
+  let select_executable_command = $('#batch_connect_session_context_executable_command');
+
+  console.log("*** *** ***");
+  console.log(select_version_value);
+  console.log(select_executable_command.val());
+  // test if user select version with no license of ANSYS Mechanical
+  if (select_version_value === "ansys-2020-R1" || select_version_value === "ansys-2019-R3") {
+    console.log("if true");
+    // hide ANSYS Mechanical executable
+    select_executable_command.children("option[value^=mapdl]").hide()
+    // if Mechanical executable was selected, change it to another
+    if (select_executable_command.val() === "mapdl -g") {
+      select_executable_command.val("fluent")
+    }
+  } else {
+    // show all executables
+    select_executable_command.children('option').show();
+  }
+
+  //$('#batch_connect_session_context_executable_command').children('option').hide();
+}
+
+/**
  * Install event handlers
  */
 $(document).ready(function() {
@@ -106,7 +133,13 @@ $(document).ready(function() {
   fix_num_cores();
   // Ensure that fields are shown or hidden based on what was set in the last session
   toggle_license_field_visibility();
-
+  
   set_node_type_change_handler();
   set_user_license_provider_change_handler();
+
+  // hide unsupported executables according to the selected version
+  hide_unsupported_executables(); // run when page is ready
+  $("#batch_connect_session_context_version").change(function() { // run everytime when selected version is changed
+    hide_unsupported_executables();
+  })
 });

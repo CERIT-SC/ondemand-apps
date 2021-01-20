@@ -4,5 +4,5 @@ category: Interactive Apps
 subcategory: GUIs
 role: batch_connect
 description: |
-  This app will launch a selected ANSYS executable (FLUENT/CFX/WORKBENCH) on zefron6 or zefron8.
+  This app will launch a selected ANSYS executable (FLUENT/CFX/WORKBENCH/ADPL) on zefron6 or zefron8.
 

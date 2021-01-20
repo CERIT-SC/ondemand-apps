@@ -30,7 +30,8 @@ attributes:
     label: "ANSYS Workbench version"
     help: "Please select version of ANSYS you want to load."
     options:
-      - [ "2019R3", "ansys-2019-R3" ]
+      - [ "2020-R1", "ansys-2020-R1" ]
+      - [ "2019-R3", "ansys-2019-R3" ]
       - [ "19.2",   "ansys-19.2"    ]
       - [ "18.2",   "ansys-18.2"    ]
       - [ "18.0",   "ansys-18.0"    ]
@@ -38,7 +39,7 @@ attributes:
   executable_command:
     widget: select
     label: "Executable"
-    help: "Choose which ANSYS command you would like to run"
+    help: "Choose which ANSYS command you would like to run. Not every command may be available in selected ANSYS version."
     options:
       - ["FLUENT", "fluent"]
       - ["CFX", "cfx5"]
