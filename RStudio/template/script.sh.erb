@@ -2,7 +2,11 @@
 
 export TMPDIR=${SCRATCHDIR}
 
-podman-real run --root=${TMPDIR} --rm -p ${port}:8787 -e PASSWORD=${RSTUDIO_PASSWORD} --ulimit="nofile=4096" -v /mnt:/storage -v ${HOME}:/home/rstudio -it rocker/rstudio:4.0.2 /bin/bash -c "echo 'auth-encrypt-password=0' >> /etc/rstudio/rserver.conf; echo 'auth-minimum-user-id=0' >> /etc/rstudio/rserver.conf; echo 'server-user=root' >> /etc/rstudio/rserver.conf; echo 'auth-validate-users=0' >> /etc/rstudio/rserver.conf; sed -i -e 's/rstudio:x:1000/rstudio:x:0/' /etc/passwd ; /init"
+echo -e "#!/usr/bin/podmanwrapper rocker/rstudio:4.0.2\n#PODMAN_OPT --rm -p ${port}:8787 -e PASSWORD=${RSTUDIO_PASSWORD} --ulimit=\"nofile=4096\" -v /mnt:/storage -v ${HOME}:/home/rstudio\n\necho 'auth-encrypt-password=0' >> /etc/rstudio/rserver.conf; echo 'auth-minimum-user-id=0' >> /etc/rstudio/rserver.conf; echo 'server-user=root' >> /etc/rstudio/rserver.conf; echo 'auth-validate-users=0' >> /etc/rstudio/rserver.conf; sed -i -e 's/rstudio:x:1000/rstudio:x:0/' /etc/passwd ; /init" > "${TMPDIR}/tmpscript"
+
+chmod +x "${TMPDIR}/tmpscript"
+
+"${TMPDIR}/tmpscript"
 
 killall -9 dbus-daemon &> /dev/null
 
