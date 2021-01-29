@@ -7,5 +7,5 @@ script:
   native:
     - "-l"
     - "select=1:ngpus=1:ncpus=<%= bc_num_slots.to_i %>:mem=<%= custom_memory.to_i %>G:scratch_local=10G"
-    - "-v IMAGE=cerit/debian9-xfce-gl"
+    - "-v IMAGE=cerit/centos7-xfce-gl"
     - "<% case executable_command; when 'fluent' %>-l ansys-cfd=1<% when 'cfx5' %>-l ansys-cfd=1<% when 'mapdl -g' %>-l ansys-me=1<% end %>"
