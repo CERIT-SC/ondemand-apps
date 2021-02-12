@@ -44,6 +44,9 @@ export R_LIBS=${HOME}/R/x86_64-redhat-linux-gnu-library/
 # Benchmark info
 echo "TIMING - Starting jupyter at: $(date)"
 
+export TMP=$SCRATCHDIR
+export TMPDIR=$SCRATCHDIR
+
 # Launch the Jupyter Notebook Server
 set -x
 /cvmfs/software.metacentrum.cz/software/anaconda/python37/2019-10/bin/jupyter notebook --config="${CONFIG_FILE}" <%= context.extra_jupyter_args %>
